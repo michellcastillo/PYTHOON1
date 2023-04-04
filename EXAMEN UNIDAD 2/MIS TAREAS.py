@@ -82,7 +82,7 @@ class Tareas:
             if len(self.combo_asignatura.get()) != 0 and len(self.fecha.get()) != 0 and len(self.puntaje.get()) != 0 and  len(self.descripcion.get()) != 0:
                 return True
             else:
-                messagebox.showerror("ERROR", "Complete todos los campos del formulario")
+                messagebox.showerror("ERROR", "COMPLETE TODOS LOS CAMPOS DEL FORMULARIUO")
 
     def Limpiar_formulario(self):
             self.combo_asignatura.delete(0, END)
@@ -118,11 +118,11 @@ class Tareas:
             dato = self.tree.item(self.tree.selection())['text']
             nombre = self.tree.item(self.tree.selection())['values'][0]
             query = "DELETE FROM MISTAREAS WHERE asignatura = ?"
-            respuesta = messagebox.askquestion("ADVERTENCIA", f"¿Seguro que desea eliminar esta tarea:?")
+            respuesta = messagebox.askquestion("ADVERTENCIA", f"¿SEGURO QUE QUIERES ELIMINAR ESTÁ TAREA:?")
             if respuesta == 'yes':
                 self.Ejecutar_consulta(query, (dato,))
                 self.Obtener_tareas()
-                messagebox.showinfo('ÉXITO', 'TAREAS HECHA :3')
+                messagebox.showinfo('ÉXITO', '¡FELICIDADES HAS COMPLETADO ESTÁ TAREA! :3')
             else:
                 messagebox.showerror('ERROR', f'Error al eliminar la tarea')
 

@@ -88,7 +88,7 @@ class Registro:
         if(str(self.contrasena.get()) == str(self.repetir_contrasena.get())):
             return True
         else:
-            messagebox.showerror("ERROR", "CONTRASEÑAS NO COINCIDEN")
+            messagebox.showerror("ERROR", "LAS CONTRASEÑAS NO COINCIDEN")
 
     def Buscar_matricula(self, matricula):
         with sqlite3.connect(self.db_name) as conexion:
