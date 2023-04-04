@@ -29,7 +29,7 @@ class Registro:
         label_imagen.pack(pady=2)
 
        #CREACION DEL MARCO PARA EL FORMULARIO
-        marco = LabelFrame(ventana, text="Datos personales", bg="azure", font=("Comic Sans", 15, "bold"))
+        marco = LabelFrame(ventana, text="DATOS PERSONALES", bg="azure", font=("Comic Sans", 15, "bold"))
         marco.config(bd=5, pady=10)
         marco.pack()
 
@@ -48,7 +48,7 @@ class Registro:
         self.apellidos.grid(row=2, column=1, padx=12, pady=8)
 
         label_carrera = Label(marco, text="CARRERA: ", bg="azure", font=("Arial", 12, "bold")).grid(row=3, column=0, sticky='s',padx=12, pady=8)
-        self.combo_carrera=ttk.Combobox(marco,values=["SISTEMAS","RENOVABLES","ELECTROMECANICA","LOGISTICA","ADMINISTRACIO"],width=22,state="readonly", font=("Arial", 12))
+        self.combo_carrera=ttk.Combobox(marco,values=["SISTEMAS","RENOVABLES","ELECTROMECÁNICA","LOGÍSTICA","ADMINISTRACIÓN"],width=22,state="readonly", font=("Arial", 12))
         self.combo_carrera.current(0)
 
         self.combo_carrera.grid(row=3, column=1, padx=12, pady=8)
