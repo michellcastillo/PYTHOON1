@@ -81,7 +81,7 @@ class Registro:
         if len(self.matricula.get()) !=0 and len(self.nombres.get()) !=0 and len(self.apellidos.get()) !=0 and len(self.combo_carrera.get()) !=0 and len(self.contrasena.get()) !=0 and len(self.repetir_contrasena.get()) !=0 :
             return True
         else:
-            messagebox.showerror("ERROR","COMPLETE LOS DATOS SOLICITADOOOOOOOS")
+            messagebox.showerror("ERROR","COMPLETE LOS DATOS SOLICITADOS")
 
 
     def validar_contrasena(self):
@@ -105,7 +105,7 @@ class Registro:
         if (dato == []):
             return True
         else:
-            messagebox.showerror("ERROR", "MATRICULA REGISTRADA ANTERIORMENTE")
+            messagebox.showerror("ERROR", "MATRÍCULA REGISTRADA ANTERIORMENTE")
 
     def Registrar_usuario(self):
         if self.validar_formulariofull() and self.validar_contrasena() and self.validar_contrasena():
