@@ -52,7 +52,7 @@ class Login_Principal:
         frame_botones.config(bg="azure")
         frame_botones.pack()
 
-        boton_registrar=Button(frame_botones,text="INICIAR", command=self.login,height=2,width=10,bg="springgreen4",fg="white",font=("Arial",12,"bold")).grid(row=0, column=1,padx=10, pady=15)
+        boton_registrar_alumno=Button(frame_botones,text="INICIAR", command=self.login,height=2,width=10,bg="springgreen4",fg="white",font=("Arial",12,"bold")).grid(row=0, column=1,padx=10, pady=15)
         boton_limpiar = Button(frame_botones, text="REGISTRAR", command=self.Llamar_formulario, height=2, width=10,bg="springgreen4", fg="white", font=("Arial", 12, "bold")).grid(row=0, column=2, padx=10,pady=15)
 
 
