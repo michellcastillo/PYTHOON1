@@ -29,7 +29,7 @@ def leer_alumnosDB():
 def agregar_alumnoDB(nombre, apellido, edad, carrera, semestre, email):
     try:
         cursor = db.cursor()
-        cursor.execute("INSERT INTO alumnos (nombre, edad, email) VALUES (%s, %s, %s)", (nombre, apellido, edad, carrera, semestre, email))
+        cursor.execute("INSERT INTO alumnos (nombre, apellido,edad,carrera, semestre, email) VALUES (%s, %s, %s, %s, %s, %s)", (nombre, apellido, edad, carrera, semestre, email))
         db.commit()
     except mysql.connector.Error as error:
         messagebox.showerror("Error al agregar el alumno", f"No se pudo agregar el alumno: {error}")
@@ -235,7 +235,7 @@ Label(tabla_alumnos, text="ID").grid(row=1, column=0)
 Label(tabla_alumnos, text="Nombre").grid(row=1, column=1)
 Label(tabla_alumnos, text="Apellido").grid(row=1, column=2)
 Label(tabla_alumnos, text="Edad").grid(row=1, column=3)
-Label(tabla_alumnos, text="Carrear").grid(row=1, column=4)
+Label(tabla_alumnos, text="Carrera").grid(row=1, column=4)
 Label(tabla_alumnos, text="Semestre").grid(row=1, column=5)
 Label(tabla_alumnos, text="Email").grid(row=1, column=6)
 
