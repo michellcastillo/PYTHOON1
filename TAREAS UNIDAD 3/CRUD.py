@@ -91,7 +91,27 @@ def agregar_alumno():
     # Validar que los campos no estén vacíos
     if not nombre or not apellido or not edad or not carrera or not semestre or not email:
         messagebox.showerror("Error al agregar el alumno", "Por favor ingrese todos los datos del alumno")
+
+    elif not nombre.replace('',"").isalpha():
+        messagebox.showerror("ERROR","SOLO LETRAS NO NUMEROS")
+
+    elif not apellido.replace('',"").isalpha():
+        messagebox.showerror("ERROR","SOLO LETRAS NO NUMEROS")
+
+    elif not edad.isdigit():
+        messagebox.showerror("ERROR","SOLO NUMEROS NO LETRAS")
         return
+    elif not carrera.replace('',"").isalpha():
+        messagebox.showerror("ERROR","SOLO LETRAS NO NUMEROS")
+        return
+    elif not semestre.replace('',"").isalpha():
+        messagebox.showerror("ERROR","SOLO LETRAS NO NUMEROS")
+        return
+    elif not email.replace('',"").isalpha():
+        messagebox.showerror("ERROR","SOLO LETRAS NO NUMEROS")
+        return
+
+
 
     # Agregar el nuevo alumno
     agregar_alumnoDB(nombre, apellido, edad, carrera, semestre, email)
