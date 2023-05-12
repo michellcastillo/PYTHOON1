@@ -121,9 +121,10 @@ def ventanaingresar():
       elif not semestre.replace('', "").isalpha():
          messagebox.showerror("ERROR", "SOLO SE PERMITEN LETRAS EN EL SEMESTRE, INTENTALO DE NUEVO")
          return
-      if email == "":
+      elif email == "":
          messagebox.showerror("ERROR", "NO SE A INGRESADO UN EMAIL, INTENTALO DE NUEVO")
          return
+      return
 
       # AGREGAR UN NUEVO ALUMNO
       agregar_alumnoDB(nombre, apellido, edad, carrera, semestre, email)
