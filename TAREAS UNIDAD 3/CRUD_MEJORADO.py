@@ -1,4 +1,5 @@
 from tkinter import *
+from tkinter import ttk
 from tkinter import messagebox, Tk
 import mysql.connector
 import tkinter as tk
@@ -200,7 +201,7 @@ def ventanaingresar():
 
    def salir():
       ventana.destroy()
-      call([sys.executable,r"C:\Users\miche\PycharmProjects\PYCHARMich\TAREAS UNIDAD 3\CRUD.py"])
+      call([sys.executable,r"C:\Users\miche\PycharmProjects\PYCHARMich\TAREAS UNIDAD 3\CRUD_MEJORADO.py"])
       # Crear la ventana principal
 
    ventana = Tk()
@@ -231,11 +232,13 @@ def ventanaingresar():
    entrada_edad.grid(row=3, column=1, padx=5, pady=5)
 
    Label(marco, text="CARRERA:", bg="azure").grid(row=4, column=0, padx=5, pady=5)
-   entrada_carrera = Entry(marco)
+   entrada_carrera = ttk.Combobox(marco,values=["Sistemas", "Electromecanica", "Administracion", "Renovables","Animacion"],width=18, state="readonly")
+   entrada_carrera.current(0)
    entrada_carrera.grid(row=4, column=1, padx=5, pady=5)
 
    Label(marco, text="SEMESTRE:", bg="azure").grid(row=5, column=0, padx=5, pady=5)
-   entrada_semestre = Entry(marco)
+   entrada_semestre = ttk.Combobox(marco, values=["Segundo", "Cuarto", "Sexto", "Octavo", "Alumno Irregular"],width=18, state="readonly")
+   entrada_semestre.current(0)
    entrada_semestre.grid(row=5, column=1, padx=5, pady=5)
 
    Label(marco, text="EMAIL:", bg="azure").grid(row=6, column=0, padx=5, pady=5)
