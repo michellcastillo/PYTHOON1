@@ -124,10 +124,11 @@ def ventanaingresar():
       elif email == "":
          messagebox.showerror("ERROR", "NO SE A INGRESADO UN EMAIL, INTENTALO DE NUEVO")
          return
-      return
+      else:
+
 
       # AGREGAR UN NUEVO ALUMNO
-      agregar_alumnoDB(nombre, apellido, edad, carrera, semestre, email)
+       agregar_alumnoDB(nombre, apellido, edad, carrera, semestre, email)
 
       # LIMPIAR LOS CAMPOS DE ENTRADA
       entrada_nombre.delete(0, END)
