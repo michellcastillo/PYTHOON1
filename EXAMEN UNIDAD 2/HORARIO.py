@@ -37,7 +37,7 @@ class HORARIO:
 
     def llamar_login(self):
         ventanahorario.destroy()
-        call([sys.executable, 'c:/Users/miche/PycharmProjects/pycharm/EXAMEN UNIDAD 2/LOGIN.py'])  #
+        call([sys.executable, 'c:/Users/miche/PycharmProjects/pycharm/EXAMEN UNIDAD 2/login.py'])  #
 
     def llamar_menu(self):
         ventanahorario.destroy()
