@@ -85,7 +85,7 @@ class Login_Principal:
 
     def Llamar_formulario(self):
         ventanalogin.destroy()
-        call([sys.executable,'c:/Users/miche/PycharmProjects/pycharm/EXAMEN UNIDAD 2/FORMULARIO PARA LOGIN.py'])
+        call([sys.executable,'c:/Users/miche/PycharmProjects/pycharm/EXAMEN UNIDAD 2/FORMULARIO PARA login.py'])
 
 if __name__ == '__main__':
   ventanalogin = Tk()

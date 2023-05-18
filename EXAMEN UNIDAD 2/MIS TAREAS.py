@@ -128,7 +128,7 @@ class Tareas:
 
     def llamar_login(self):
         ventana_tarea.destroy()
-        call([sys.executable, 'c:/Users/miche/PycharmProjects/pycharm/EXAMEN UNIDAD 2/LOGIN.py'])
+        call([sys.executable, 'c:/Users/miche/PycharmProjects/pycharm/EXAMEN UNIDAD 2/login.py'])
 
     def llamar_menu(self):
          ventana_tarea.destroy()

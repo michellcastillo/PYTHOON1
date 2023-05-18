@@ -70,7 +70,7 @@ class VentanaPrincipal:
 
     def llamar_login(self):
         root.destroy()
-        call([sys.executable, 'c:/Users/miche/PycharmProjects/pycharm/EXAMEN UNIDAD 2/LOGIN.py'])
+        call([sys.executable, 'c:/Users/miche/PycharmProjects/pycharm/EXAMEN UNIDAD 2/login.py'])
     def llamar_horario(self):
         root.destroy()
         call([sys.executable, 'c:/Users/miche/PycharmProjects/pycharm/EXAMEN UNIDAD 2/HORARIO.py'])
@@ -81,7 +81,7 @@ class VentanaPrincipal:
 
     def llamar_mistareas(self):
         root.destroy()
-        call([sys.executable, 'c:/Users/miche/PycharmProjects/pycharm/EXAMEN UNIDAD 2/MIS TAREAS.py'])
+        call([sys.executable, 'c:/Users/miche/PycharmProjects/pycharm/EXAMEN UNIDAD 2/crud.py'])
 
 
 if __name__ == '__main__':
