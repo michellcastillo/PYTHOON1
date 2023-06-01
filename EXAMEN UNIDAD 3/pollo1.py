@@ -22,7 +22,7 @@ class MyApp:
         espacio = Label(self.ventana, text=" ", bg="azure", font=("Arial", 12), fg="gray1")
         espacio.config(pady="15")
         espacio.pack()
-        miEtiqueta1 = Label(self.ventana, text="¡ALGO ESTA MAL, INTENTALO DE NUEVO!", bg="azure", font=("Arial", 12), fg="gray1")
+        miEtiqueta1 = Label(self.ventana, text="¡ALGO ESTA MAL, PANZONA!", bg="azure", font=("Arial", 12), fg="gray1")
         miEtiqueta1.config(pady="10")
         miEtiqueta1.pack()
 

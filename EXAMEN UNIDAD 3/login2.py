@@ -29,7 +29,7 @@ class Register:
         marco.config(bd=5, pady=10)
         marco.pack()
 
-        self.matricula_label = tk.Label(marco, text="MSTRÍCULA:",bg="azure", font=("Arial", 12, "bold"))
+        self.matricula_label = tk.Label(marco, text="MATRÍCULA:",bg="azure", font=("Arial", 12, "bold"))
         self.matricula_label.grid(row=1, column=1, padx=5, pady=8)
         vcmd = (self.window.register(self.validate_matricula), '%P')
         self.matricula_entry = tk.Entry(marco, validate="key", validatecommand=vcmd, font=("Arial", 12))

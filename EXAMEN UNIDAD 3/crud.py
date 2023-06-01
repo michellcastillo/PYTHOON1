@@ -133,7 +133,7 @@ class TareasApp:
         if not new_text:
             return True
         try:
-            if int(new_text) > 0 and int(new_text) < 1000:
+            if int(new_text) > 0 and int(new_text) <= 100:
                 return True
             else:
                 return False
@@ -201,6 +201,7 @@ class TareasApp:
         except mysql.connector.errors.IntegrityError:
             messagebox.showerror("ERROR", "NO EXISTE UNA TAREA CON ESE ID")
 
+
     def eliminar(self):
         id = self.id_entry.get()
 
@@ -210,14 +211,17 @@ class TareasApp:
 
         try:
             self.cursor.execute("""
-                   DELETE FROM tareas WHERE id=%s
-               """, (id,))
-            self.conn.commit()
-            messagebox.showinfo("ÉXITO", "TAREA ELIMINADA CON ÉXITO")
-            self.limpiar_entradas()
-            self.mostrar_datos()
-        except mysql.connector.errors.IntegrityError:
-            messagebox.showerror("ERROR", "NO EXISTE UNA TAREA CON ESE ID")
+                DELETE FROM tareas WHERE id=%s
+            """, (id,))
+            if self.cursor.rowcount == 0:  # SI EN LA COLUMNA NO EXISTE
+                messagebox.showerror("ERROR", "NO EXISTE UNA TAREA CON ESE ID")
+            else:
+                self.conn.commit()
+                messagebox.showinfo("ÉXITO", "TAREA ELIMINADA CON ÉXITO")
+                self.limpiar_entradas()
+                self.mostrar_datos()
+        except Exception as e:
+            messagebox.showerror("ERROR", str(e))
 
     def buscar(self):
         id = self.id_entry.get()
