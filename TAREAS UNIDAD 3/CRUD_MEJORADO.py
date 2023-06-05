@@ -201,6 +201,36 @@ def ventanaingresar():
          # MOSTRAR LA LISTA DE ACTUALIZACIÓN DE ALUMNOS
          mostrar_alumnos()
 
+      # VALIDACIÓN
+   def validate_id(new_text):
+      if not new_text:
+         return True
+      try:
+         if int(new_text) >= 0 and len(new_text) <= 2:
+            return True
+         else:
+            return False
+      except ValueError:
+         return False
+
+   def validate_nombre(text):
+      return text.isalpha() and len(text) <= 10
+
+   def validate_apellido(text):
+      return text.isalpha() and len(text) <= 10
+
+   def validate_edad (new_text):
+      if not new_text:
+         return True
+      try:
+         if int(new_text) >= 0 and len(new_text) <= 2:
+            return True
+         else:
+            return False
+      except ValueError:
+         return False
+
+
    def salir():
       ventana.destroy()
       call([sys.executable,r"C:\Users\miche\PycharmProjects\PYCHARMich\TAREAS UNIDAD 3\CRUD_MEJORADO.py"])
@@ -216,21 +246,25 @@ def ventanaingresar():
    marco.config(bd=2)
    marco.pack()
 
+
+
    # Crear los campos de entrada para los datos del alumno
    Label(marco, text="ID:", bg="azure").grid(row=0, column=0, padx=5, pady=5)
-   entrada_id = Entry(marco)
+   vcmd = (marco.register(validate_id), '%P')
+   entrada_id = Entry(marco, validate="key", validatecommand=vcmd)
    entrada_id.grid(row=0, column=1, padx=5, pady=5)
 
    Label(marco, text="NOMBRE:", bg="azure").grid(row=1, column=0, padx=5, pady=5)
-   entrada_nombre = Entry(marco)
+   entrada_nombre = Entry(marco, validate="key", validatecommand=(marco.register(validate_nombre), '%P'))
    entrada_nombre.grid(row=1, column=1, padx=5, pady=5)
 
    Label(marco, text="APELLIDO:", bg="azure").grid(row=2, column=0, padx=5, pady=5)
-   entrada_apellido = Entry(marco)
+   entrada_apellido = Entry(marco, validate="key", validatecommand=(marco.register(validate_apellido), '%P'))
    entrada_apellido.grid(row=2, column=1, padx=5, pady=5)
 
    Label(marco, text="EDAD:", bg="azure").grid(row=3, column=0, padx=5, pady=5)
-   entrada_edad = Entry(marco)
+   vcmd4 = (marco.register(validate_edad), '%P')
+   entrada_edad = Entry(marco, validate="key", validatecommand=vcmd4)
    entrada_edad.grid(row=3, column=1, padx=5, pady=5)
 
    Label(marco, text="CARRERA:", bg="azure").grid(row=4, column=0, padx=5, pady=5)
@@ -282,7 +316,6 @@ def ventanaingresar():
    # Iniciar el loop de la ventana
    ventana.mainloop()
 
-
 def llam():
    global ventana2
    ventana2=tk.Toplevel(ventanaprincipal)
@@ -304,7 +337,7 @@ label_imagen.image = render
 label_imagen.config(bg="azure")
 label_imagen.pack(pady=10, padx=0, ipadx=0)
 
-descripción = Label(ventanaprincipal, text="PARA INGRESAR, PRESIONE EL BOTON", bg="thistle", font=("Arial", 9, "bold"), pady=12).pack()
+descripcion = Label(ventanaprincipal, text="PARA INGRESAR, PRESIONE EL BOTON", bg="thistle", font=("Arial", 9, "bold"), pady=12).pack()
 Boton_ingresar=Button(ventanaprincipal,text="INGRESAR", bg="azure",  command=ventanaingresar, font=("Arial", 10, "bold"), pady="15")
 Boton_ingresar.place(x=200,y=330, height=100, width=100)
 
